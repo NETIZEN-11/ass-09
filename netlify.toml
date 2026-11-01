@@ -1,0 +1,15 @@
+# Netlify Configuration for React SPA
+[build]
+  base = "client"
+  publish = "client/dist"
+  command = "npm run build"
+
+# Redirect all requests to index.html for client-side routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Environment variables (set these in Netlify dashboard)
+[build.environment]
+  NODE_VERSION = "18"
